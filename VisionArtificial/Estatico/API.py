@@ -1,5 +1,5 @@
 # COMANDOS NECESARIOS PARA EJECUTAR, UBICARSE EN:
-# cd Marcha-Humana
+# cd NEMI
 # Ejecutar el comando:
 # uvicorn VisionArtificial.Estatico.API:app
 
