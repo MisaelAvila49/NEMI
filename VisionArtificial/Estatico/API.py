@@ -1,4 +1,6 @@
-# cd Desktop/2025-2/MARCHA/Marcha-Humana
+# COMANDOS NECESARIOS PARA EJECUTAR, UBICARSE EN:
+# cd Marcha-Humana
+# Ejecutar el comando:
 # uvicorn VisionArtificial.Estatico.API:app
 
 from fastapi import FastAPI, File, UploadFile
