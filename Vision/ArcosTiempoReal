@@ -91,7 +91,7 @@ with mp_pose.Pose(static_image_mode=False, model_complexity=2, min_detection_con
         except Exception as e:
             print(f"Error: {e}")
 
-        cv2.imshow("Estimación de Angulos", image)
+        cv2.imshow("Estimacion de Angulos", image)
         if cv2.waitKey(1) & 0xFF == 27:  # Salir con ESC
             break
 
