@@ -2,20 +2,6 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-# Función para calcular el ángulo
-def angle(a, b, c):
-    ba = a - b
-    bc = c - b
-    cosine_angle = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc))
-    cosine_angle = np.clip(cosine_angle, -1.0, 1.0)
-    ang = np.degrees(np.arccos(cosine_angle))
-    if ang > 180:
-        ang = ang - 180
-    if ang < 90:
-        ang = 180 - ang
-    ang = abs(round(ang))
-    return ang, b  # Devuelve una tupla (ángulo, punto)
-
 # Inicializar mediapipe
 mp_pose = mp.solutions.pose
 mp_drawing = mp.solutions.drawing_utils
@@ -37,6 +23,21 @@ INDICES = {
     'TA_I': 29, 'TA_D': 30
 }
 
+# FUNCIÓN PARA CALCULAR ANGULOS
+def angle(a, b, c):
+    ba = a - b
+    bc = c - b
+    cosine_angle = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc))
+    cosine_angle = np.clip(cosine_angle, -1.0, 1.0)
+    ang = np.degrees(np.arccos(cosine_angle))
+    if ang > 180:
+        ang = ang - 180
+    if ang < 90:
+        ang = 180 - ang
+    ang = abs(round(ang))
+    return ang, b  # Devuelve una tupla (ángulo, punto)
+
+
 # Iniciar captura de video
 cap = cv2.VideoCapture(0)
 ret, frame = cap.read()
@@ -46,7 +47,7 @@ if not ret:
 
 # Obtener dimensiones del frame
 H, W, _ = frame.shape
-CXI, CXD = round(W/55), -round(W/17)  # Desplazamientos para texto
+CXI, CXD = round(W/55), -round(W/17)
 
 with mp_pose.Pose(static_image_mode=False, 
                  model_complexity=2, 
