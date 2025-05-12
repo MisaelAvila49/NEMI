@@ -1,7 +1,7 @@
 # COMANDOS NECESARIOS PARA EJECUTAR, UBICARSE EN:
 # cd NEMI
 # Ejecutar el comando:
-# uvicorn VisionArtificial.Estatico.API:app
+# uvicorn VisionArtificial.Estatico.APIImagen:app
 
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import StreamingResponse
