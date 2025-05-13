@@ -1,7 +1,6 @@
 import requests
 import os
 import time
-from pathlib import Path
 
 # Configuración de la API
 API_URL = "http://127.0.0.1:8000/analizar_video/"
