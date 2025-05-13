@@ -11,6 +11,8 @@ detectar fases del ciclo de la marcha y facilitar diagnósticos clínicos median
   - [Estatico](#estatico)
   - [TiempoReal](#tiemporeal)
   - [Video](#video)
+- [Uso Sensores](#uso-sensores)
+- [Uso Interfaz](#uso-interfaz)
 
 ## Descripción
 
@@ -80,7 +82,7 @@ Este código no requiere de otro para ser ejecutado. Una vez en uso la ventana a
 
 #### ArcosYEtapas
 
-Este algoritmo se enfoca en agregar una nueva funcionalidad a los algoritmos anteriores, además de poder hacer la estimación de arcos en tiempo real, con ayuda de estos datos y los datos de posición de puntos importantes se utiliza un algoritmo de Machine Learning para poder clasificar la fase de la marcha en la que se encuentra la persona (CONTACTO INICIAL": "INITIAL CONTACT", "RESPUESTA A LA CARGA": "LOADING RESPONSE", "APOYO MEDIO": "MID-STANCE", "APOYO FINAL": "TERMINAL STANCE", "PRE OSCILACION": "PRE-SWING", "OSCILACION INICIAL": "INITIAL SWING", "OSCILACION MEDIA": "MID-SWING", "OSCILACION FINAL": "TERMINAL SWING").
+Este algoritmo se enfoca en agregar una nueva funcionalidad a los algoritmos anteriores, además de poder hacer la estimación de arcos en tiempo real, con ayuda de estos datos y los datos de posición de puntos importantes se utiliza un algoritmo de Machine Learning contenido en la carpeta `VisionComputacional/ModelosML` para poder clasificar la fase de la marcha en la que se encuentra la persona (CONTACTO INICIAL": "INITIAL CONTACT", "RESPUESTA A LA CARGA": "LOADING RESPONSE", "APOYO MEDIO": "MID-STANCE", "APOYO FINAL": "TERMINAL STANCE", "PRE OSCILACION": "PRE-SWING", "OSCILACION INICIAL": "INITIAL SWING", "OSCILACION MEDIA": "MID-SWING", "OSCILACION FINAL": "TERMINAL SWING").
 
 ![Ejemplo: Arcos y Etapas en tiempo real](Imágenes/EtapasTiempoReal.png)
 
@@ -90,4 +92,32 @@ Como el algoritmo anterior, no requiere de algo más para ser ejecutado y la ven
 
 Esta carpeta contiene algoritmos que funcionan con videos grabados anteriormente, surge con la finalidad de eliminar los posibles errores provocados por el gasto computacional de ejecutar los algoritmos en tiempo real.
 
+#### ArcosYPredicciones.py
 
+Este es un algoritmo que toma como entrada un video, en este caso está configurado para utilizar el video de `VisionComputacional/Pruebas/Gait.mp4`, aunque el código puede ser modificado para procesar otro. El proceso se basa en crear un nuevo video que muestra los ángulos estimados de miembros inferiores, así como las etapas predecidas por el algoritmo de machine learning de la carpeta `VisionComputacional/ModelosML`. Para poder tener una idea del proceso, también se muestra en la terminal o en donde se ejecute el código de python la cantidad de frames procesados y un porcentaje cada que este aumente un 5%. Como añadido a los anteriores algoritmos, este nos permite obtener al final obtener un archivo csv con la información del video, es decir, los arcos de movilidad, tiempos y la predicción de la etapa de la marcha.
+
+
+
+Este código no requiere de ejecutar algo más, simplemente con tener una entrada de video junto con los algoritmos preentrenados del scaler y el modelo de ML funciona. Se puede modificar el nombre del video de salida y el archivo csv en el algoritmo así como el destino de estos, si no se modifica el algoritmo guardará tanto el video como el csv en la carpeta `VisionComputacional/Pruebas`.
+
+#### APIVideo.py
+
+Esta API cuenta con distintos apartados para hacer funcionar correctamente todo lo que se mencionó en el algoritmo anterior; El primer apartado es en el que se puede subir y procesar el video, tiene como salida tanto el csv como el video con estimaciones de arcos y la predicción de las etapas de la marcha. Para descargar estos dos también se guarda el número serial generado en carpetas temporales por ambos, así entonces, con el segundo y tercer apartado se pueden extraer para poder guardarse en la computadora. Finalmente existe otro apartado para eliminar los archivos temporales y poder empezar desde cero los procesos.
+
+
+Esta API se puede ejecutar utilizando una terminal con el comando `uvicorn VisionComputacional.Video.APIVideo:app`, esto le permitirá subir videos, descargar las salidas y reiniciar el programa en interfaces como Swagger o utilizando un programa como el que se mostrará a continuación.
+
+#### PruebaAPI.py
+
+En este algoritmo se utiliza la API mencionada anteriormente, solamente requiere el archivo de entrada para descargar automáticamente las salidas (el video procesado y el archivo csv), si no se configura un nombre o ruta de destino diferente las salidas se encontrarán en la carpeta `VisionComputacional/Pruebas`, como adición en la terminal se mostrará el progreso que lleva el analisis del video por lo que puede revisarse en cualquier momento.
+
+
+Es claro que para utilizar el código se debe ejecutar el archivo `APIVideo.py` en una terminal con el comando `uvicorn VisionComputacional.Video.APIVideo:app`, después, de ser necesario, se debe cambiar el nombre del archivo de entrada para posteriormente ejecutar el algoritmo y así poder observar las salidas y el progreso.
+
+### Uso Sensores
+
+ESTA SECCIÓN ESTÁ PENDIENTE
+
+### Uso Interfaz
+
+ESTA SECCIÓN ESTÁ PENDIENTE
