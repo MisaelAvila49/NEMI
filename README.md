@@ -53,7 +53,7 @@ Video. Empezaremos con el código de la API contenida en la primer carpeta;
 En esta carpeta se encuentra el algoritmo `APIImagen.py`, en términos sencillos, la API recibe una imagen como entrada, detecta los puntos del cuerpo mediante mediapipe, estima los arcos de movimiento de puntos en cadera, rodilla y talón para dar como salida una imagen procesada que muestra los ángulos en colores intuitivos.
 
 Para ejecutar la API es recomendable que se utilice una terminal; colóquese en el directorio de NEMI y ejecute el comando: `uvicorn VisionComputacional.Estatico.APIImagen:app`, esto le permitirá recibir imágenes y mandar la imagen codificada.
-
+   
 Esta API se utiliza también en el código: `VisionComputacional/TiempoReal/PruebasAPI.py`, el cual se describe a continuación.
 
 #### TiempoReal
