@@ -57,8 +57,30 @@ Esta API se utiliza también en el código: `VisionComputacional/TiempoReal/Prue
 
 ### TiempoReal
 
-Comencemos con el código `PruebasAPI.py`, este es un ejemplo de como se podría utilizar la API en `VisionComputacional/Estatico/APIImagen.py`; Como primer paso se tiene que ejecutar la API como se mostró en la subsección anterior y después ejecutar el código de python.
+#### PruebasAPI.py
+
+Comencemos con el código `PruebasAPI.py`, este es un ejemplo de como se podría utilizar la API en `VisionComputacional/Estatico/APIImagen.py`; Este algoritmo accede a la camara principal de la computadora que se este utilizando y manda las imagenes obtenidas para ser procesadas en la API y, al terminar el procesamiento, son mostradas en tiempo real. 
 
 ![Ejemplo: APIImagen en tiemporeal](Imágenes/APITiempoReal.PNG)
 
-Este algoritmo accede a la camara principal de la computadora que se este utilizando y manda las imagenes obtenidas para ser procesadas en la API y, al terminar el procesamiento, son mostradas en tiempo real. Es importante destacar que la fluidez y el delay del video pueden verse afectada por la calidad de conexión, el tamaño de la captura de imágenes que se utilice, entre otras cosas.
+Como primer paso se tiene que ejecutar la API como se mostró en la subsección anterior y después ejecutar el código de python. Es importante destacar que la fluidez y el delay del video pueden verse afectada por la calidad de conexión, el tamaño de la captura de imágenes que se utilice, entre otras cosas.
+
+#### AproximacionDeArcos.py
+
+Este código funciona similar al anterior, accediendo a la cámara del usuario para obtener imágenes, procesarlas con ayuda de mediapipe y haciendo la estimación de los ángulos, su principal diferencia radica en que todo este proceso es local, por lo que disminuye el delay respecto a la API.
+
+![Ejemplo: Aproximacion de arcos en tiempo real](Imágenes/ArcosTiempoReal.png)
+
+Este código no requiere de otro para ser ejecutado. Una vez en uso la ventana abierta por opencv donde se muestran los resultados puede ser cerrada presionando la tecla `ESC`.
+
+#### ArcosYEtapas
+
+Este algoritmo se enfoca en agregar una nueva funcionalidad a los algoritmos anteriores, además de poder hacer la estimación de arcos en tiempo real, con ayuda de estos datos y los datos de posición de puntos importantes se utiliza un algoritmo de Machine Learning para poder clasificar la fase de la marcha en la que se encuentra la persona (CONTACTO INICIAL": "INITIAL CONTACT", "RESPUESTA A LA CARGA": "LOADING RESPONSE", "APOYO MEDIO": "MID-STANCE", "APOYO FINAL": "TERMINAL STANCE", "PRE OSCILACION": "PRE-SWING", "OSCILACION INICIAL": "INITIAL SWING", "OSCILACION MEDIA": "MID-SWING", "OSCILACION FINAL": "TERMINAL SWING").
+
+![Ejemplo: Arcos y Etapas en tiempo real](Imágenes/EtapasTiempoReal.png)
+
+Como el algoritmo anterior, no requiere de algo más para ser ejecutado y la ventana abierta por opencv se cierra con la misma tecla `ESC`.  Si se desea utilizar los nombres en español de las etapas es necesario cambiar el diccionario de `mapa_etiquetas` encontrado en el código.
+
+### Video
+
+
