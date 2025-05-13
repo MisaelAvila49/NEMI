@@ -7,7 +7,7 @@ detectar fases del ciclo de la marcha y facilitar diagnósticos clínicos median
 
 - [Descripción](#descripción)
 - [Estructura de Carpetas](#estructura-de-carpetas)
-- [Uso](#uso)
+- [Uso Visión Computacional](#uso-vision-computacional)
 
 ## Descripción
 
@@ -40,27 +40,25 @@ Explicación de la estructura de carpetas del repositorio:
 
 - `/Interfaz`: Pendiente.
 
-## Uso
+## Uso Visión computacional
 
-Primero, para mantener el funcionamiento correcto de cada uno de los códigos y archivos es importante que se descargue todo o en dado caso que se clone todo este repositorio, ahora comencemos con describir y explicar el funcionamiento de cada algoritmo.
-
-### Visión Computacional
-
-Como se mencionó anteriormente, este se divide en diferentes carpetas de las cuales nos enfocaremos en Estatico, TiempoReal y
+Como se mencionó anteriormente, este apartado se divide en diferentes carpetas de las cuales nos enfocaremos en Estatico, TiempoReal y
 Video. Empezaremos con el código de la API contenida en la primer carpeta;
 
-#### Estatico
+### Estatico
 
 En esta carpeta se encuentra el algoritmo `APIImagen.py`, en términos sencillos, la API recibe una imagen como entrada, detecta los puntos del cuerpo mediante mediapipe, estima los arcos de movimiento de puntos en cadera, rodilla y talón para dar como salida una imagen procesada que muestra los ángulos en colores intuitivos.
 
-![Texto alternativo](Imágenes/Estatico.png)
+![Ejemplo: APIImagen](Imágenes/Estatico.png)
 
 Para ejecutar la API es recomendable que se utilice una terminal; colóquese en el directorio de NEMI y ejecute el comando: `uvicorn VisionComputacional.Estatico.APIImagen:app`, esto le permitirá recibir imágenes y mandar la imagen codificada.
    
 Esta API se utiliza también en el código: `VisionComputacional/TiempoReal/PruebasAPI.py`, el cual se describe a continuación.
 
-#### TiempoReal
+### TiempoReal
 
 Comencemos con el código `PruebasAPI.py`, este es un ejemplo de como se podría utilizar la API en `VisionComputacional/Estatico/APIImagen.py`; Como primer paso se tiene que ejecutar la API como se mostró en la subsección anterior y después ejecutar el código de python.
+
+![Ejemplo: APIImagen en tiemporeal](Imágenes/APITiempoReal.PNG)
 
 Este algoritmo accede a la camara principal de la computadora que se este utilizando y manda las imagenes obtenidas para ser procesadas en la API y, al terminar el procesamiento, son mostradas en tiempo real. Es importante destacar que la fluidez y el delay del video pueden verse afectada por la calidad de conexión, el tamaño de la captura de imágenes que se utilice, entre otras cosas.
