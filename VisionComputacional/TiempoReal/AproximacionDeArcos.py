@@ -66,7 +66,7 @@ with mp_pose.Pose(static_image_mode=False,
         if results.pose_landmarks is None:
             cv2.putText(image, "Persona fuera de cuadro", (W//4, H//2), 
                        font, 2, (0, 0, 255), 3)
-            cv2.imshow("Estimacion de Angulos", image)
+            cv2.imshow("Arcos de movilidad", image)
             if cv2.waitKey(1) & 0xFF == 27:
                 break
             continue
@@ -121,7 +121,7 @@ with mp_pose.Pose(static_image_mode=False,
         except Exception as e:
             print(f"Error: {e}")
 
-        cv2.imshow("Estimacion de Angulos", image)
+        cv2.imshow("Arcos de movilidad", image)
         if cv2.waitKey(1) & 0xFF == 27:
             break
 
