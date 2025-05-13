@@ -7,7 +7,10 @@ detectar fases del ciclo de la marcha y facilitar diagnósticos clínicos median
 
 - [Descripción](#descripción)
 - [Estructura de Carpetas](#estructura-de-carpetas)
-- [Uso Visión Computacional](#uso-vision-computacional)
+- [Uso Visión Computacional](#uso-visión-computacional)
+  - [Estatico](#estatico)
+  - [TiempoReal](#tiemporeal)
+  - [Video](#video)
 
 ## Descripción
 
