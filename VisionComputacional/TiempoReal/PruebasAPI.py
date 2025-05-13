@@ -45,9 +45,9 @@ while True:
     
     # Mostrar el frame procesado o el original si hay error
     if resultado is not None:
-        cv2.imshow("Procesamiento Postural - API", resultado)
+        cv2.imshow("Arcos de movilidad - API", resultado)
     else:
-        cv2.imshow("Procesamiento Postural - API", frame)
+        cv2.imshow("Arcos de movilidad - API", frame)
     
     # Salir con ESC
     if cv2.waitKey(1) & 0xFF == 27:
