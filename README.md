@@ -40,7 +40,7 @@ Explicación de la estructura de carpetas del repositorio:
 
 - `/Interfaz`: Pendiente.
 
-## Uso Visión computacional
+## Uso Visión Computacional
 
 Como se mencionó anteriormente, este apartado se divide en diferentes carpetas de las cuales nos enfocaremos en Estatico, TiempoReal y
 Video. Empezaremos con el código de la API contenida en la primer carpeta;
@@ -57,9 +57,11 @@ Esta API se utiliza también en el código: `VisionComputacional/TiempoReal/Prue
 
 ### TiempoReal
 
+En esta carpeta existen 3 códigos principales con diferentes métodos para hacer mediciones en tiempo real, todos se ven afectados en cierta medida por el gasto computacional, por lo que es importante tomar en cuenta la situación en que se utilizarán.
+
 #### PruebasAPI.py
 
-Comencemos con el código `PruebasAPI.py`, este es un ejemplo de como se podría utilizar la API en `VisionComputacional/Estatico/APIImagen.py`; Este algoritmo accede a la camara principal de la computadora que se este utilizando y manda las imagenes obtenidas para ser procesadas en la API y, al terminar el procesamiento, son mostradas en tiempo real. 
+Comencemos con el código `PruebasAPI.py`, este es un ejemplo de como se podría utilizar la API en `VisionComputacional/Estatico/APIImagen.py`; Este algoritmo accede a la cámara principal de la computadora que se esté utilizando y manda las imágenes obtenidas para ser procesadas en la API y, al terminar el procesamiento, son mostradas en tiempo real. 
 
 ![Ejemplo: APIImagen en tiemporeal](Imágenes/APITiempoReal.PNG)
 
@@ -82,5 +84,7 @@ Este algoritmo se enfoca en agregar una nueva funcionalidad a los algoritmos ant
 Como el algoritmo anterior, no requiere de algo más para ser ejecutado y la ventana abierta por opencv se cierra con la misma tecla `ESC`.  Si se desea utilizar los nombres en español de las etapas es necesario cambiar el diccionario de `mapa_etiquetas` encontrado en el código.
 
 ### Video
+
+Esta carpeta contiene algoritmos que funcionan con videos grabados anteriormente, surge con la finalidad de eliminar los posibles errores provocados por el gasto computacional de ejecutar los algoritmos en tiempo real.
 
 
