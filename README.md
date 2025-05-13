@@ -17,8 +17,8 @@ Los datos son recolectados mediante unidades de medición inercial (IMU) conecta
 Simultáneamente, se procesan fotogramas de video para extraer las posiciones del tren inferior utilizando redes neuronales convolucionales. 
 
 Esta información se emplea en una segunda estimación de arcos de movilidad, además de realizar predicciones sobre las fases de la marcha humana mediante modelos de machine learning entrenados con una base de datos de aproximadamente 
-2,300 imágenes de adultos sanos de entre 20 y 25 años. El sistema identifica las 8 etapas del ciclo de la marcha con una precisión notable, alcanzando un F1 Score mínimo de 0.89 para la fase de "mid-swing" y un máximo de 0.96 para 
-"mid-stance", con una precisión global de 0.94. 
+2,300 imágenes de adultos sanos de entre 20 y 25 años. El sistema identifica las 8 etapas del ciclo de la marcha con una precisión notable, alcanzando un F1 Score mínimo de 0.89 para la fase de "Oscilación Media" y un máximo de 0.96 para 
+"Apoyo Medio", con una precisión global de 0.94. 
 
 Ambas estimaciones se combinan para reducir la incertidumbre de las mediciones individuales. Finalmente, los resultados se presentan mediante una interfaz gráfica intuitiva que permite a profesionales de la salud acceder a herramientas de 
 diagnóstico de bajo costo y alta precisión.
@@ -27,6 +27,19 @@ diagnóstico de bajo costo y alta precisión.
 
 Explicación de la estructura de carpetas del repositorio:
 
-- `/carpeta1`: Descripción de la carpeta 1.
-- `/carpeta2`: Descripción de la carpeta 2.
+
+- `/SensoresInerciales`: Pendiente.
+
+- `/VisionComputacional`: Códigos con diferentes metódos de captura sobre visión computacional.
+  - `/Estatico`: Estimación de arcos de movilidad en imágenes.
+  - `/ModelosML`: Modelos pre-entrenados de ML junto con los scalers.
+  - `/Pruebas`: Videos e imágenes que funcionan para probar los algoritmos.
+  - `/TiempoReal`: Estimación de Arcos y predicción de fases de la marcha en tiempo real.
+  - `/Video`: Estimación de arcos y predicción de fases de la marcha en un video pre-grabado.
+
+- `/Interfaz`: Pendiente.
+
+## Uso
+
+
 
