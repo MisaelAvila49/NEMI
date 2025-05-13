@@ -30,16 +30,34 @@ Explicación de la estructura de carpetas del repositorio:
 
 - `/SensoresInerciales`: Pendiente.
 
-- `/VisionComputacional`: Códigos con diferentes metódos de captura sobre visión computacional.
+- `/VisionComputacional`: Códigos con diferentes métodos de captura sobre visión computacional.
   - `/Estatico`: Estimación de arcos de movilidad en imágenes.
-  - `/ModelosML`: Modelos pre-entrenados de ML junto con los scalers.
+  - `/ModelosML`: Modelos preentrenados de ML junto con los scalers.
   - `/Pruebas`: Videos e imágenes que funcionan para probar los algoritmos.
   - `/TiempoReal`: Estimación de Arcos y predicción de fases de la marcha en tiempo real.
-  - `/Video`: Estimación de arcos y predicción de fases de la marcha en un video pre-grabado.
+  - `/Video`: Estimación de arcos y predicción de fases de la marcha en un video pregrabado.
 
 - `/Interfaz`: Pendiente.
 
 ## Uso
 
+Primero, para mantener el funcionamiento correcto de cada uno de los códigos y archivos es importante que se descargue todo o en dado caso que se clone todo este repositorio, ahora comencemos con describir y explicar el funcionamiento de cada algoritmo.
 
+### Visión Computacional
 
+Como se mencionó anteriormente, este se divide en diferentes carpetas de las cuales nos enfocaremos en Estatico, TiempoReal y
+Video. Empezaremos con el código de la API contenida en la primer carpeta;
+
+#### Estatico
+
+En esta carpeta se encuentra el algoritmo `APIImagen.py`, en términos sencillos, la API recibe una imagen como entrada, detecta los puntos del cuerpo mediante mediapipe, estima los arcos de movimiento de puntos en cadera, rodilla y talón para dar como salida una imagen procesada que muestra los ángulos en colores intuitivos.
+
+Para ejecutar la API es recomendable que se utilice una terminal; colóquese en el directorio de NEMI y ejecute el comando: `uvicorn VisionComputacional.Estatico.APIImagen:app`, esto le permitirá recibir imágenes y mandar la imagen codificada.
+
+Esta API se utiliza también en el código: `VisionComputacional/TiempoReal/PruebasAPI.py`, el cual se describe a continuación.
+
+#### TiempoReal
+
+Comencemos con el código `PruebasAPI.py`, este es un ejemplo de como se podría utilizar la API en `VisionComputacional/Estatico/APIImagen.py`; Como primer paso se tiene que ejecutar la API como se mostró en la subsección anterior y después ejecutar el código de python.
+
+Este algoritmo accede a la camara principal de la computadora que se este utilizando y manda las imagenes obtenidas para ser procesadas en la API y, al terminar el procesamiento, son mostradas en tiempo real. Es importante destacar que la fluidez y el delay del video pueden verse afectada por la calidad de conexión, el tamaño de la captura de imágenes que se utilice, entre otras cosas.
