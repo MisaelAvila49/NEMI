@@ -31,9 +31,8 @@ def process_video():
     print(f"Video subido correctamente. ID de sesión: {session_id}")
     
     # 2. Esperar un tiempo razonable para el procesamiento
-    # (En una aplicación real, podrías implementar un polling para verificar el estado)
     print("Procesando video...")
-    time.sleep(5)  # Ajusta este tiempo según la duración de tu video
+    time.sleep(5) 
     
     # 3. Descargar el video procesado
     video_url = f"{DOWNLOAD_VIDEO_URL}{session_id}"
