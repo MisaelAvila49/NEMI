@@ -44,7 +44,10 @@ Explicación de la estructura de carpetas del repositorio:
   - `/TiempoReal`: Estimación de Arcos y predicción de fases de la marcha en tiempo real.
   - `/Video`: Estimación de arcos y predicción de fases de la marcha en un video pregrabado.
 
-- `/Interfaz`: Pendiente.
+- `/Interfaz`: Proyecto en Unity para integrar y visualizar los resultados de los módulos de sensores y visión computacional.
+  - `Assets/`: scripts en C# y recursos gráficos.
+  - `Packages/`: dependencias gestionadas con el Unity Package Manager.
+  - `ProjectSettings/`: configuración del proyecto (versión de Unity, compilación, gráficos).
 
 ## Uso Visión Computacional
 
