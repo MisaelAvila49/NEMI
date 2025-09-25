@@ -123,7 +123,7 @@ Es claro que para utilizar el código se debe ejecutar el archivo `APIVideo.py` 
 
 ### Uso Interfaz
 
-El apartado de Interfaz contiene el proyecto de Unity que permite la visualización e interacción con los datos obtenidos de sensores y de visión computacional. En este entorno se construye la representación en tiempo real de la marcha humana mediante un esqueleto animado y controles básicos de simulación.
+El apartado de Interfaz contiene el proyecto de Unity que permite la visualización e interacción con los datos obtenidos de sensores y de visión computacional. 
 
 Estructura del proyecto
 
