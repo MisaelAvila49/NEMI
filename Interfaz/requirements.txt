@@ -1,11 +1,7 @@
-Requires-Python: >=3.10
+Requisitos de la Interfaz
 
-fastapi==0.115.12
-joblib==1.4.2
-mediapipe==0.10.20
-numpy==2.2.5
-opencv-python==4.11.0.86
-requests==2.32.3
-scipy>=1.10
-filterpy>=1.4.5
-bleak>=0.22
+Unity Editor: versión 2022.3.57f1 LTS
+
+Sistema operativo recomendado: Windows 10/11.
+
+Dependencias adicionales: todas las librerías necesarias se gestionan desde el Package Manager de Unity
