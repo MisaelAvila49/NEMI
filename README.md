@@ -34,7 +34,8 @@ diagnóstico de bajo costo y alta precisión.
 Explicación de la estructura de carpetas del repositorio:
 
 
-- `/SensoresInerciales`: Pendiente.
+- `/SensoresInerciales`: Codigos para usar los sensores IMU
+  - `/WT9011DCL`:
 
 - `/VisionComputacional`: Códigos con diferentes métodos de captura sobre visión computacional.
   - `/Estatico`: Estimación de arcos de movilidad en imágenes.
@@ -118,7 +119,7 @@ Es claro que para utilizar el código se debe ejecutar el archivo `APIVideo.py` 
 
 ### Uso Sensores
 
-ESTA SECCIÓN ESTÁ PENDIENTE
+
 
 ### Uso Interfaz
 
