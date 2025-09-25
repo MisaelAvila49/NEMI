@@ -127,12 +127,12 @@ El apartado de Interfaz contiene el proyecto de Unity que permite la visualizaci
 
 Estructura del proyecto
 
-Dentro de la carpeta Interfaz/ se encuentran las carpetas principales de cualquier proyecto Unity:
+Dentro de la carpeta `Interfaz/` se encuentran las carpetas principales de cualquier proyecto Unity:
 
-Assets/: contiene los scripts en C# y los recursos del proyecto.
+`Assets/`: contiene los scripts en C# y los recursos del proyecto.
 
-Packages/: define las dependencias de Unity utilizadas.
+`Packages/`: define las dependencias de Unity utilizadas.
 
-ProjectSettings/: incluye la configuración del proyecto, como versión de Unity, ajustes de compilación y parámetros gráficos.
+`ProjectSettings/`: incluye la configuración del proyecto, como versión de Unity, ajustes de compilación y parámetros gráficos.
 
 Para abrir el proyecto, basta con abrir Unity Hub, seleccionar la opción Open, navegar hasta la carpeta Interfaz/ y elegirla como proyecto.
