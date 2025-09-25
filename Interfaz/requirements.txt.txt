@@ -1,0 +1,11 @@
+Requires-Python: >=3.10
+
+fastapi==0.115.12
+joblib==1.4.2
+mediapipe==0.10.20
+numpy==2.2.5
+opencv-python==4.11.0.86
+requests==2.32.3
+scipy>=1.10
+filterpy>=1.4.5
+bleak>=0.22
