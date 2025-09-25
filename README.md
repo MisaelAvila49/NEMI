@@ -117,11 +117,11 @@ En este algoritmo se utiliza la API mencionada anteriormente, solamente requiere
 
 Es claro que para utilizar el código se debe ejecutar el archivo `APIVideo.py` en una terminal con el comando `uvicorn VisionComputacional.Video.APIVideo:app`, después, de ser necesario, se debe cambiar el nombre del archivo de entrada para posteriormente ejecutar el algoritmo y así poder observar las salidas y el progreso.
 
-### Uso Sensores
+## Uso Sensores
 
 
 
-### Uso Interfaz
+## Uso Interfaz
 
 El apartado de Interfaz contiene el proyecto de Unity que permite la visualización e interacción con los datos obtenidos de sensores y de visión computacional. 
 
@@ -135,4 +135,29 @@ Dentro de la carpeta `Interfaz/` se encuentran las carpetas principales de cualq
 
 `ProjectSettings/`: incluye la configuración del proyecto, como versión de Unity, ajustes de compilación y parámetros gráficos.
 
-Para abrir el proyecto, basta con abrir Unity Hub, seleccionar la opción Open, navegar hasta la carpeta Interfaz/ y elegirla como proyecto.
+Para abrir el proyecto, basta con abrir Unity Hub, seleccionar la opción Open, navegar hasta la carpeta `Interfaz/` y elegirla como proyecto.
+
+### Pantalla principal
+Al ejecutar la escena principal del proyecto en Unity, se despliega un menú inicial que contiene los apartados:
+
+#### Visión artificial
+
+Grabar en tiempo real: abre el módulo para capturar y procesar video en directo desde la cámara del equipo, haciendo uso de los algoritmos descritos en `VisionComputacional/`.
+
+Subir video: permite cargar un archivo de video previamente grabado para ser procesado en la API de visión artificial.
+
+#### Sensores
+
+Grabar en tiempo real: accede al módulo que recibe los datos enviados por los sensores inerciales conectados.
+
+Simulación: abre la escena de simulación en Unity, donde se visualiza en tiempo real un esqueleto animado controlado con los datos adquiridos.
+
+### Ejecución
+
+1. Abre el proyecto en Unity Hub seleccionando la carpeta `Interfaz/`.
+
+2. En el editor, abre la escena principal (marcha).
+
+3. Presiona Play para iniciar la ejecución de la interfaz.
+
+4. Selecciona el apartado que desees utilizar: Visión artificial o Sensores.
