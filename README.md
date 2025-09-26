@@ -132,7 +132,8 @@ Es claro que para utilizar el código se debe ejecutar el archivo `APIVideo.py` 
 ## Uso Sensores
 Como se mencionó anteriormente, este apartado se divide en diferentes carpetas que contienen los códigos necesarios para establecer la conexión con los sensores WT9011DCL, calibrarlos, estimar parámetros de la marcha y desplegar los resultados en una interfaz. A continuación se describe el contenido de cada una de ellas.
 
-### Conexión
+### WT9011DCL
+#### Conexión
 En esta carpeta se encuentran dos códigos principales:
 
 - 1sensor.py
@@ -143,7 +144,7 @@ Similar al anterior, pero pensado para la conexión simultánea de tres sensores
 
 Estos códigos se ejecutan directamente en Python desde la terminal.
 
-### Calibración 
+#### Calibración 
 Esta carpeta contiene los archivos necesarios para la calibración de los sensores.
 
 - calibracion.py
@@ -152,7 +153,7 @@ Es un script que ejecuta automáticamente los comandos de calibración sobre el 
 - comandos.txt
 Contiene únicamente los comandos en hexadecimal necesarios para realizar manualmente la calibración de los sensores (ejemplo: calibración del giroscopio, restauración de valores de fábrica, etc.).
 
-### Estimación
+#### Estimación
 En esta carpeta se encuentra el archivo:
 
 - estimacion.py
@@ -162,7 +163,7 @@ Este código procesa los datos recibidos de los sensores y realiza los cálculos
 - Velocidad de marcha
 - Longitud de paso
 
-### API
+#### API
 El archivo puede ejecutarse directamente y mostrará los resultados en consola o los exportará según la configuración.
 Finalmente, esta carpeta concentra los códigos que integran todo lo anterior en un servicio accesible:
 
