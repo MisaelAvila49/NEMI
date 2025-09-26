@@ -1,1 +1,17 @@
+# Comandos de calibración WT901BLE (enviar por puerto serie o BLE)
+
+# Calibración de acelerómetro en 6 posiciones
+FF AA 01 01 00
+
+# Guardar parámetros en memoria flash
+FF AA 00 00 00
+
+# Calibración de giroscopio
+FF AA 01 04 00
+
+# Restaurar valores de fábrica
+FF AA 00 FF 00
+
+# Ajustar la calibración del magnetómetro
+FF AA 01 07 00
 
