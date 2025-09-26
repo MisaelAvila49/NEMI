@@ -12,6 +12,11 @@ detectar fases del ciclo de la marcha y facilitar diagnósticos clínicos median
   - [TiempoReal](#tiemporeal)
   - [Video](#video)
 - [Uso Sensores](#uso-sensores)
+  - [WT9011DCL](#wt9011dcl)
+    -[Conexión](#conexión)
+    -[Calibración](#calibración)
+    -[Estimación](#estimación)
+    -[API](#api)
 - [Uso Interfaz](#uso-interfaz)
 
 ## Descripción
