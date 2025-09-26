@@ -36,6 +36,10 @@ Explicación de la estructura de carpetas del repositorio:
 
 - `/SensoresInerciales`: Codigos para usar los sensores IMU
   - `/WT9011DCL`:
+    - `/Conexión`: Conexion via Bluetooth con 1 y 3 sensores.
+    - `/Calibración`: Calibración de sensores WT9011DCL con comandos del fabricante.
+    - `/Estimación`: Calculo de parametros de la marcha humana.
+    - `/API`: Creación de una API con Conexion, Calibración y estimación de los sensores, y una interfaz.
 
 - `/VisionComputacional`: Códigos con diferentes métodos de captura sobre visión computacional.
   - `/Estatico`: Estimación de arcos de movilidad en imágenes.
@@ -121,8 +125,49 @@ En este algoritmo se utiliza la API mencionada anteriormente, solamente requiere
 Es claro que para utilizar el código se debe ejecutar el archivo `APIVideo.py` en una terminal con el comando `uvicorn VisionComputacional.Video.APIVideo:app`, después, de ser necesario, se debe cambiar el nombre del archivo de entrada para posteriormente ejecutar el algoritmo y así poder observar las salidas y el progreso.
 
 ## Uso Sensores
+Como se mencionó anteriormente, este apartado se divide en diferentes carpetas que contienen los códigos necesarios para establecer la conexión con los sensores WT9011DCL, calibrarlos, estimar parámetros de la marcha y desplegar los resultados en una interfaz. A continuación se describe el contenido de cada una de ellas.
 
+### Conexión
+En esta carpeta se encuentran dos códigos principales:
 
+- 1sensor.py
+Este código establece la conexión vía Bluetooth con un solo sensor WT9011DCL. Permite recibir y visualizar datos en crudo (acelerómetro, giroscopio, magnetómetro) para comprobar que el sensor funciona correctamente.
+
+- 3sensores.py
+Similar al anterior, pero pensado para la conexión simultánea de tres sensores WT9011DCL. Los datos recibidos se diferencian por cada sensor y pueden ser usados posteriormente en la estimación de parámetros de la marcha.
+
+Estos códigos se ejecutan directamente en Python desde la terminal.
+
+### Calibración 
+Esta carpeta contiene los archivos necesarios para la calibración de los sensores.
+
+- calibracion.py
+Es un script que ejecuta automáticamente los comandos de calibración sobre el sensor conectado y permite obtener datos corregidos. Incluye la calibración de acelerómetro, giroscopio y magnetómetro.
+
+- comandos.txt
+Contiene únicamente los comandos en hexadecimal necesarios para realizar manualmente la calibración de los sensores (ejemplo: calibración del giroscopio, restauración de valores de fábrica, etc.).
+
+### Estimación
+En esta carpeta se encuentra el archivo:
+
+- estimacion.py
+Este código procesa los datos recibidos de los sensores y realiza los cálculos necesarios para obtener los parámetros de la marcha humana. Entre ellos:
+- Detección de pasos
+- Cálculo de cadencia
+- Velocidad de marcha
+- Longitud de paso
+
+### API
+El archivo puede ejecutarse directamente y mostrará los resultados en consola o los exportará según la configuración.
+Finalmente, esta carpeta concentra los códigos que integran todo lo anterior en un servicio accesible:
+
+- API.py
+Implementado con FastAPI, permite recibir datos de los sensores, aplicar la calibración y realizar la estimación de parámetros de la marcha. El servidor puede levantarse desde la terminal:
+uvicorn WT9011DCL.API.API:app
+Esto habilita endpoints para consultar los datos procesados desde un navegador o cliente HTTP.
+
+- interfaz.py
+Es una interfaz gráfica que se conecta con la API para mostrar de forma visual los datos de los sensores, las estimaciones de la marcha y las gráficas en tiempo real.
 
 ## Uso Interfaz
 
