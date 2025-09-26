@@ -169,11 +169,13 @@ Finalmente, esta carpeta concentra los códigos que integran todo lo anterior en
 
 - API.py
 Implementado con FastAPI, permite recibir datos de los sensores, aplicar la calibración y realizar la estimación de parámetros de la marcha. El servidor puede levantarse desde la terminal:
-uvicorn WT9011DCL.API.API:app
+uvicorn API:app
 Esto habilita endpoints para consultar los datos procesados desde un navegador o cliente HTTP.
 
 - interfaz.py
-Es una interfaz gráfica que se conecta con la API para mostrar de forma visual los datos de los sensores, las estimaciones de la marcha y las gráficas en tiempo real.
+Es una interfaz gráfica que se conecta con la API para mostrar de forma visual los datos de los sensores, las estimaciones de la marcha.
+<img width="556" height="360" alt="image" src="https://github.com/user-attachments/assets/60020d0c-8592-4f10-b896-ef6c47ea81f5" />
+
 
 ## Uso Interfaz
 
